@@ -1,11 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Entity.h"
-#include "player.h"
 #include <iostream>
+#include <string>
 
 using namespace sf;
-
 
 extern int tile;
 extern int current_scene;

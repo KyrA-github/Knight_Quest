@@ -1,5 +1,6 @@
 #include "global.h"
-
+#include "Entity.h"
+#include "player.h"
 
 int tile = 16;
 

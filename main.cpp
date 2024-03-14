@@ -1,6 +1,5 @@
-#include "global.h"
-#include "Entity.h"
-#include "player.h"
+//#include "global.h"
+#include "GameEngine.h"
 
 int tile = 16;
 
@@ -15,20 +14,7 @@ float offsetX = 0, offsetY = 0;
 
 int main()
 {
-
-	RenderWindow window(VideoMode(1366, 768), "window");
-
-	while (window.isOpen())
-	{
-		Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == Event::Closed) 
-			{
-				window.close();
-			}	
-		}
-		// ...
-	}
+	GameEngine engine;
+	engine.run();
 	return 0;
 }

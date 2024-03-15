@@ -5,10 +5,7 @@
 
 using namespace sf;
 
-extern int tile;
-extern int current_scene;
-
-extern int matrix_h, matrix_w;
+extern int current_scene, matrix_h, matrix_w, tile;
 
 extern float offsetX, offsetY;
 

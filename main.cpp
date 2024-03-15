@@ -3,7 +3,7 @@
 
 int tile = 16;
 
-int current_scene = 1;
+int current_scene = 2;
 
 int matrix_h = 60, matrix_w = 60;
 

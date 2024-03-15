@@ -4,14 +4,15 @@ GameEngine::GameEngine()
 {
 	std::cout << "Start";
 	texture_player.loadFromFile("data/SGQ_Dungeon/characters/main/elf.png");
+	texture_map.loadFromFile("data/maps/walls.png");
 
 	player_1.info(texture_player, 16, 16, 0.8, 1, true);
 }
 
 void GameEngine::run()
 {
+	map_class.info(texture_map);
 	RenderWindow window(VideoMode(1280, 720), "window");
-		
 	while (window.isOpen())
 	{
 		time_func();
@@ -50,7 +51,9 @@ void GameEngine::current_scene_func(RenderWindow& window)
 	}
 	else if (current_scene == 2)
 	{
+
 		player_1.control(time);
+		map_class.draw(window);
 		window.draw(player_1.get_sprite());
 	}
 }

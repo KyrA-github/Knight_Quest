@@ -1,7 +1,7 @@
 #pragma once
 #include "global.h"
 #include <fstream>
-#include "json/include/nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
 
 class loading_map
 {
@@ -11,9 +11,9 @@ public:
 	int tile_x;
 	int tile_y;
 	int tilenumder;
+	int width_map_img, height_map_img;
 
-	loading_map(Texture& image);
-
+	void info(Texture& image);
 	void read_file();
 	void draw(RenderWindow& window);
 

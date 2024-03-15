@@ -1,6 +1,6 @@
 #include "loading_map.h"
 
-loading_map::loading_map(Texture& image)
+void loading_map::info(Texture& image)
 {
 	sprite.setTexture(image);
 }
@@ -11,7 +11,7 @@ void loading_map::read_file()
 	{
 		nlohmann::json objJson;
 		std::fstream fileInput;
-		fileInput.open("data_game/map/map_level_1.json");
+		fileInput.open("data/map/map_1.json");
 		fileInput >> objJson;
 		fileInput.close();
 
@@ -28,9 +28,9 @@ void loading_map::read_file()
 			}
 		}
 	}
-	catch (const nlohmann::json::exception& e)
+	catch (const nlohmann::json::exception& error)
 	{
-		std::cout << "Error reading JSON: " << e.what() << std::endl;
+		std::cout << "Error reading JSON: " << error.what() << std::endl;
 	}
 }
 
@@ -40,21 +40,21 @@ void loading_map::draw(RenderWindow& window)
 	{
 		for (int j = 0; j < matrix_w; j++)
 		{
-			int groundTile = Layer[i][j];
-			int treeTile = treeLayer[i][j];
+			int groundTile = Layer_odj[i][j];
+			int treeTile = Layer_background[i][j];
 
 			if (groundTile != 0)
 			{
 				tile_bool = true;
 				tile_x = 16;
 				tile_y = 16;
-				tilenumder = groundLayer[i][j];
+				tilenumder = Layer_odj[i][j];
 				tile_x = tilenumder * tile_x;
 				while (tile_bool)
 				{
-					if (tile_x > 352)
+					if (tile_x > 224)
 					{
-						tile_x = tile_x - 352;
+						tile_x = tile_x - 224;
 						tile_y = tile_y + 16;
 					}
 					else
@@ -73,13 +73,13 @@ void loading_map::draw(RenderWindow& window)
 				tile_bool = true;
 				tile_x = 16;
 				tile_y = 16;
-				tilenumder = treeLayer[i][j];
+				tilenumder = Layer_background[i][j];
 				tile_x = tilenumder * tile_x;
 				while (tile_bool)
 				{
-					if (tile_x > 352)
+					if (tile_x > 224)
 					{
-						tile_x = tile_x - 352;
+						tile_x = tile_x - 224;
 						tile_y = tile_y + 16;
 					}
 					else

@@ -54,4 +54,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="data\maps\map_1.json">
+      <Filter>Исходные файлы</Filter>
+    </None>
+    <None Include="data\maps\walls.tsx">
+      <Filter>Исходные файлы</Filter>
+    </None>
+  </ItemGroup>
 </Project>

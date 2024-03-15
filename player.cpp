@@ -35,8 +35,8 @@ void player::control(float time)
 void player::update(float time)
 {
 	rect.left += dx * time;
-
 	Collision(0);
+	rect.top += dy * time;
 	Collision(1);
 
 

@@ -45,35 +45,33 @@ void player::update(float time)
 
 	if (dy > 0)
 	{
-
+		currentFrame += 0.008 * time;
+		if (currentFrame > 4) currentFrame -= 4;
+		sprite.setTextureRect(IntRect(0, width * int(currentFrame), width, height));
+	}
+	else if (dy < 0)
+	{
+		currentFrame += 0.008 * time;
+		if (currentFrame > 4) currentFrame -= 4;
+		sprite.setTextureRect(IntRect(16, width * int(currentFrame), width, height));
 	}
 	else if (dx < 0)
 	{
-		currentFrame += 0.01 * time;
-		if (currentFrame > 3) currentFrame -= 3;
-		sprite.setTextureRect(IntRect(width * int(currentFrame) + width, 0, -width, height));
+		currentFrame += 0.008 * time;
+		if (currentFrame > 4) currentFrame -= 4;
+		sprite.setTextureRect(IntRect(48, width * int(currentFrame), width, height));
 	}
 	else if (dx > 0)
 	{
-		currentFrame += 0.01 * time;
-		if (currentFrame > 3) currentFrame -= 3;
-		sprite.setTextureRect(IntRect(width * int(currentFrame), 0, width, height));
+		currentFrame += 0.008 * time;
+		if (currentFrame > 4) currentFrame -= 4;
+		sprite.setTextureRect(IntRect(32, width * int(currentFrame), width, height));
 	}
 	else
 	{
-		if (viewed) {
-			currentFrame += 0.01 * time;
-			if (currentFrame > 3) currentFrame -= 3;
-			sprite.setTextureRect(IntRect(width * int(currentFrame), 32, width, height));
-
-		}
-		else
-		{
-			currentFrame += 0.01 * time;
-			if (currentFrame > 3) currentFrame -= 3;
-			sprite.setTextureRect(IntRect(width * int(currentFrame) + width, 32, -width, height));
-
-		}
+		currentFrame += 0.008 * time;
+		if (currentFrame > 1) currentFrame -= 1;
+		sprite.setTextureRect(IntRect(width * int(currentFrame), 0, width, height));
 	}
 
 	sprite.setPosition(rect.left - offsetX, rect.top - offsetY);

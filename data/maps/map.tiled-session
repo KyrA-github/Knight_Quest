@@ -3,16 +3,29 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "map_1.json",
+    "activeFile": "",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
+        "4 BigSet.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 1
+        },
         "map_1.json": {
             "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 210,
-                "y": 365
+                "x": 89,
+                "y": 279
+            }
+        },
+        "map_10_1.json": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 276,
+                "y": 242.66666666666666
             }
         },
         "walls.tsx": {
@@ -21,17 +34,17 @@
         }
     },
     "last.imagePath": "C:/Users/koren/source/repos/KyrA-github/Knight_Quest/data/maps",
-    "map.height": 38,
+    "map.height": 35,
     "map.lastUsedFormat": "json",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 50,
+    "map.width": 47,
     "openFiles": [
-        "map_1.json",
-        "walls.tsx"
     ],
     "project": "map.tiled-project",
     "recentFiles": [
+        "map_10_1.json",
+        "4 BigSet.tsx",
         "walls.tsx",
         "map_1.json"
     ],

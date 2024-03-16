@@ -4,6 +4,8 @@
 
 void player::info(Texture& texture, int W, int H, float Speed, float HP, bool Life)
 {	
+	dx = 0;
+	dy = 0;
 	currentFrame = 0;
 	viewed = 1;
 	life = Life;
@@ -34,6 +36,7 @@ void player::control(float time)
 
 void player::update(float time)
 {
+	std::cout << time << std::endl;
 	rect.left += dx * time;
 	Collision(0);
 	rect.top += dy * time;

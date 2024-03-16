@@ -6,12 +6,13 @@ GameEngine::GameEngine()
 	texture_player.loadFromFile("data/SGQ_Dungeon/characters/main/elf.png");
 	texture_map.loadFromFile("data/maps/walls.png");
 
-	player_1.info(texture_player, 16, 16, 0.8, 1, true);
+	player_1.info(texture_player, 16, 16, 0.08, 1, true);
 }
 
 void GameEngine::run()
 {
 	map_class.info(texture_map);
+	map_class.read_file();
 	RenderWindow window(VideoMode(1280, 720), "window");
 	while (window.isOpen())
 	{
@@ -36,7 +37,7 @@ void GameEngine::run()
 
 void GameEngine::time_func()
 {
-	float time = clock.getElapsedTime().asMicroseconds();
+	time = clock.getElapsedTime().asMicroseconds();
 	clock.restart();
 
 	time = time / 700;

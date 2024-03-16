@@ -5,7 +5,7 @@ int tile = 16;
 
 int current_scene = 2;
 
-int matrix_h = 60, matrix_w = 60;
+int matrix_h = 38, matrix_w = 50;
 
 int Layer_odj[100][100];
 int Layer_background[100][100];

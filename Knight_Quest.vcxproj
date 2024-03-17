@@ -140,6 +140,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="Saves.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
@@ -149,10 +150,12 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="Saves.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data\maps\map.json" />
     <None Include="data\maps\walls.tsx" />
+    <None Include="save.json" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\saves.txt" />

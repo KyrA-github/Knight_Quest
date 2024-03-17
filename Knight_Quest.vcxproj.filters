@@ -36,6 +36,9 @@
     <ClCompile Include="Map.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Saves.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -59,6 +62,9 @@
     <ClInclude Include="Map.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Saves.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\maps\walls.tsx">
@@ -67,6 +73,7 @@
     <None Include="data\maps\map.json">
       <Filter>Файлы ресурсов</Filter>
     </None>
+    <None Include="save.json" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\saves.txt">

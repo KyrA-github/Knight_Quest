@@ -15,7 +15,7 @@ void Saves::read()
 		room_id_min = objJson["room_id_min"];
 		room_id_max = objJson["room_id_max"];
 		auto layers = objJson["rooms"];
-		for (int i = 0; i < room_id_max; i++)
+		for (int i = 0; i < rooms_h; i++)
 		{
 			auto Data = layers[0]["data"];
 			for (int j = 0; j < rooms_w; j++)

@@ -42,17 +42,18 @@ void Map::edit(int id_search, int id_edit, int Layer)
 	{
 		for (int j = 0; j < matrix_w; j++)
 		{
-			if (id_search == id_edit) {
-				switch (Layer)
+			if(Layer == 1)
+			{
+				if (Layer_odj[i][j] == id_search) 
 				{
-				case 1:
 					Layer_odj[i][j] = id_edit;
-					break;
-				case 2:
+				}
+			}
+			else if (Layer == 2)
+			{
+				if (Layer_background[i][j] == id_search)
+				{
 					Layer_background[i][j] = id_edit;
-					break;
-				default:
-					break;
 				}
 			}
 		}
@@ -64,6 +65,7 @@ void Map::generation(int save, int rooms[10][4])
 	if (save == 1) {
 
 	}
+	
 	else {
 		for (int j = 0; j < 4; j++) {
 			if (rooms[num_room_id][j] == 1) {

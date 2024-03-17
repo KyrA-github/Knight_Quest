@@ -56,7 +56,7 @@ void GameEngine::current_scene_func(RenderWindow& window)
 	{
 
 		player_1.control(time);
-		
+		map.draw(window);
 		window.draw(player_1.get_sprite());
 	}
 }

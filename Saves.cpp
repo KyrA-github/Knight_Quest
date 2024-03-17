@@ -17,10 +17,10 @@ void Saves::read()
 		auto layers = objJson["rooms"];
 		for (int i = 0; i < room_id_max; i++)
 		{
-			auto Data = layers[0]["room_main"];
-			for (int j = 0; j < room_id_max; j++)
+			auto Data = layers[0]["data"];
+			for (int j = 0; j < rooms_w; j++)
 			{
-				rooms[i][j] = Data[i * room_id_max + j];
+				rooms[i][j] = Data[i * rooms_w + j];
 			}
 		}
 	}
@@ -28,11 +28,12 @@ void Saves::read()
 	{
 		std::cout << "Error reading JSON: " << error.what() << std::endl;
 	}
+	map.generation(save, rooms);
 }
 
 void Saves::write()
 {
-
+  
 }
 
 

@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "map.json",
     "expandedProjectPaths": [
         "."
     ],
@@ -19,6 +19,14 @@
         "dungeon_.tsx": {
             "scaleInDock": 3,
             "scaleInEditor": 1
+        },
+        "map.json": {
+            "scale": 0.9974999999999999,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 376.44110275689223,
+                "y": 280.70175438596493
+            }
         },
         "map_1.json": {
             "scale": 1,
@@ -36,6 +44,9 @@
                 "y": 282
             }
         },
+        "wallcs.tsx": {
+            "scaleInDock": 1
+        },
         "walls.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -48,9 +59,11 @@
     "map.tileWidth": 16,
     "map.width": 47,
     "openFiles": [
+        "map.json"
     ],
     "project": "map.tiled-project",
     "recentFiles": [
+        "map.json",
         "map_1.json",
         "dungeon_.tsx",
         "map_10_1.json",

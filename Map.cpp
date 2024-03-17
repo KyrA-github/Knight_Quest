@@ -1,5 +1,10 @@
 #include "Map.h"
 
+void Map::info(Texture& image)
+{
+	sprite.setTexture(image);
+}
+
 void Map::read()
 {	
 	id_room = 3 + rand() % 6;
@@ -31,8 +36,116 @@ void Map::read()
 	} 
 }
 
-void Map::generation()
+void Map::edit(int id_search, int id_edit, int Layer)
 {
-	
+	for (int i = 0; i < matrix_h; i++)
+	{
+		for (int j = 0; j < matrix_w; j++)
+		{
+			if (id_search == id_edit) {
+				switch (Layer)
+				{
+				case 1:
+					Layer_odj[i][j] = id_edit;
+					break;
+				case 2:
+					Layer_background[i][j] = id_edit;
+					break;
+				default:
+					break;
+				}
+			}
+		}
+	}
+}
 
+void Map::generation(int save, int rooms[10][4])
+{
+	if (save == 1) {
+
+	}
+	else {
+		for (int j = 0; j < 4; j++) {
+			if (rooms[num_room_id][j] == 1) {
+				switch (j)
+				{
+				case 0:
+					edit(35, 39, 1);
+					break;
+				case 1:
+					edit(7, 12, 1);
+					break;
+				case 2:
+					edit(21, 28, 1);
+					break;
+				case 3:
+					edit(49, 55, 1);
+					break;
+				default:
+					break;
+				}
+			}
+		}
+	}
+}
+
+void Map::draw(RenderWindow& window)
+{
+	for (int i = 0; i < matrix_h; i++)
+	{
+		for (int j = 0; j < matrix_w; j++)
+		{
+			int groundTile = Layer_odj[i][j];
+			int treeTile = Layer_background[i][j];
+
+			if (groundTile != 0)
+			{
+				tile_bool = true;
+				tile_x = 16;
+				tile_y = 16;
+				tilenumder = Layer_odj[i][j];
+				tile_x = tilenumder * tile_x;
+				while (tile_bool)
+				{
+					if (tile_x > 224)
+					{
+						tile_x = tile_x - 224;
+						tile_y = tile_y + 16;
+					}
+					else
+					{
+						tile_bool = false;
+					}
+				}
+				sprite.setTextureRect(IntRect(tile_x - 16, tile_y - 16, tile, tile));
+				sprite.setPosition(j * tile - offsetX, i * tile - offsetY);
+				window.draw(sprite);
+
+			}
+
+			if (treeTile != 0)
+			{
+				tile_bool = true;
+				tile_x = 16;
+				tile_y = 16;
+				tilenumder = Layer_background[i][j];
+				tile_x = tilenumder * tile_x;
+				while (tile_bool)
+				{
+					if (tile_x > 224)
+					{
+						tile_x = tile_x - 224;
+						tile_y = tile_y + 16;
+					}
+					else
+					{
+						tile_bool = false;
+					}
+				}
+				sprite.setTextureRect(IntRect(tile_x - 16, tile_y - 16, tile, tile));
+				sprite.setPosition(j * tile - offsetX, i * tile - offsetY);
+				window.draw(sprite);
+			}
+		}
+	}
 }

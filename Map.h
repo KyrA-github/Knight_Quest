@@ -1,12 +1,21 @@
 #pragma once
 #include "global.h"
-#include "loading_map.h"
+#include <fstream>
+#include <nlohmann/json.hpp>
+
 class Map
 {
 public:
-	int id_room;
-	int main_room[4] = {0,1,0,0};
+	Sprite sprite;
+
+	bool tile_bool;
+
+	int width_map_img, height_map_img, id_room, tilenumder, tile_y, tile_x;
+
+	void info(Texture& image);
 	void read();
-	void generation();
+	void generation(int save, int rooms[10][4]);
+	void draw(RenderWindow& window);
+	void edit(int id_search, int id_edit, int Layer);
 };
 

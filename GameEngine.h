@@ -2,7 +2,8 @@
 #include "global.h"
 #include "player.h"
 #include "menu.h"
-#include "loading_map.h"
+#include "Map.h"
+#include "Saves.h"
 
 class GameEngine
 {
@@ -14,7 +15,8 @@ private:
 	Clock clock;
 	Texture texture_player, texture_map;
 	player player_1;
-	loading_map map_class;
+	Map map;
+	Saves save;
 
 	int time = 0;
 

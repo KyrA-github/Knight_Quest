@@ -11,10 +11,11 @@ GameEngine::GameEngine()
 
 void GameEngine::run()
 {
-	map_class.info(texture_map);
-	map_class.read_file();
+	map.info(texture_map);
+	map.read();
 	RenderWindow window(VideoMode(800, 600), "window");
-
+	
+	save.read();
 	while (window.isOpen())
 	{
 		time_func();
@@ -55,7 +56,7 @@ void GameEngine::current_scene_func(RenderWindow& window)
 	{
 
 		player_1.control(time);
-		map_class.draw(window);
+		
 		window.draw(player_1.get_sprite());
 	}
 }

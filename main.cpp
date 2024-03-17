@@ -2,6 +2,8 @@
 
 int tile = 16;
 
+int num_room_id = 0;
+
 int current_scene = 2;
 
 int matrix_h = 35, matrix_w = 47;

@@ -33,6 +33,9 @@
     <ClCompile Include="loading_map.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -53,13 +56,21 @@
     <ClInclude Include="loading_map.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\maps\map_1.json">
-      <Filter>Исходные файлы</Filter>
-    </None>
     <None Include="data\maps\walls.tsx">
       <Filter>Исходные файлы</Filter>
     </None>
+    <None Include="data\maps\map.json">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\saves.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>

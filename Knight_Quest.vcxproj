@@ -137,6 +137,7 @@
     <ClCompile Include="GameEngine.cpp" />
     <ClCompile Include="loading_map.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
@@ -145,12 +146,16 @@
     <ClInclude Include="GameEngine.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="loading_map.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="data\maps\map_1.json" />
+    <None Include="data\maps\map.json" />
     <None Include="data\maps\walls.tsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\saves.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

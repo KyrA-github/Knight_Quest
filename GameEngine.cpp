@@ -13,7 +13,7 @@ void GameEngine::run()
 {
 	map_class.info(texture_map);
 	map_class.read_file();
-	RenderWindow window(VideoMode(800, 500), "window");
+	RenderWindow window(VideoMode(800, 600), "window");
 
 	while (window.isOpen())
 	{

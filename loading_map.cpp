@@ -11,7 +11,7 @@ void loading_map::read_file()
 	{
 		nlohmann::json objJson;
 		std::fstream fileInput;
-		fileInput.open("data/maps/map_1.json");
+		fileInput.open("data/maps/map.json");
 		fileInput >> objJson;
 		fileInput.close();
 

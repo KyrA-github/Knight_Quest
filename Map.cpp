@@ -7,8 +7,6 @@ void Map::info(Texture& image)
 
 void Map::read()
 {	
-	id_room = 3 + rand() % 6;
-
 	try
 	{
 		nlohmann::json objJson;
@@ -25,15 +23,42 @@ void Map::read()
 
 			for (int j = 0; j < matrix_w; j++)
 			{
-				Layer_odj[i][j] = groundData[i * matrix_w + j];
-				Layer_background[i][j] = treeData[i * matrix_w + j];
+				Layer_odj_re[i][j] = groundData[i * matrix_w + j];
+				Layer_background_re[i][j] = treeData[i * matrix_w + j];
 			}
 		}
+		re_cutting(3);
 	}
 	catch (const nlohmann::json::exception& error)
 	{
-		std::cout << "Error reading JSON: " << error.what() << std::endl;
+	std::cout << "Error reading JSON: " << error.what() << std::endl;
 	} 
+}
+
+void Map::re_cutting(int dir) 
+{
+	for (int i = 0; i < matrix_h; i++)
+	{
+		for (int j = 0; j < matrix_w; j++)
+		{
+			if (dir == 1)
+			{
+				Layer_odj[i][j] = Layer_odj_re[i][j];
+	
+			}
+			else if (dir == 2)
+			{
+				Layer_background[i][j] = Layer_background_re[i][j];
+			
+			}
+			else if (dir == 3)
+			{
+				Layer_odj[i][j] = Layer_odj_re[i][j];
+				Layer_background[i][j] = Layer_background_re[i][j];
+
+			}
+		}
+	}
 }
 
 void Map::edit(int id_search, int id_edit, int Layer)
@@ -62,13 +87,12 @@ void Map::edit(int id_search, int id_edit, int Layer)
 
 void Map::generation(int save, int rooms[10][4])
 {
-	if (save == 1) {
-
-	}
-	
-	else {
-		for (int j = 0; j < 4; j++) {
-			if (rooms[num_room_id][j] == 1) {
+	if (save == 1) 
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			if (rooms[num_room_id][j] == 1)
+			{
 				switch (j)
 				{
 				case 0:
@@ -88,6 +112,10 @@ void Map::generation(int save, int rooms[10][4])
 				}
 			}
 		}
+	}
+	else 
+	{
+		
 	}
 }
 

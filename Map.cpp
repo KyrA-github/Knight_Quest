@@ -85,7 +85,7 @@ void Map::edit(int id_search, int id_edit, int Layer)
 	}
 }
 
-void Map::generation(int save, int rooms[10][4])
+void Map::generation(int save, int rooms[10][4], int id_room_max, int id_room_min)
 {
 	if (save == 1) 
 	{
@@ -115,7 +115,26 @@ void Map::generation(int save, int rooms[10][4])
 	}
 	else 
 	{
-		
+		int room = 0;
+		save = 1;
+		id_room_max = id_room_min + rand() % id_room_max;
+		for (int i = 0; i < id_room_max; i++)
+		{
+			for (int j = 0; j < id_room_min; j++)
+			{
+				if (rooms[i][j] == 0)
+				{
+					room += 1;
+				}
+			}
+			if (room == 4)
+			{
+				int r = 0 + rand() % (1 - id_room_min);
+				rooms[i][r] = 1;
+			}
+			room = 0;
+		}
+		save_class.write(save, rooms, id_room_max, id_room_max, id_room_min);
 	}
 }
 
